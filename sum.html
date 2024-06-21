@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of prime numbers in range</title>
+</head>
+<body>
+    <input type="text" name="input-a" placeholder="Input number a" id="input-a"> <br> <br>
+    <input type="text" name="input-b" placeholder="Input number b" id="input-b"> <br><br>
+    <input type="submit" name="calc" value="Calculate" id="calc">
+    <p id="rs"></p>
+
+
+    <script>
+        const submit = document.querySelector('#calc')
+        submit.addEventListener('click', () => {
+            const inpa = document.querySelector('#input-a')
+            const inpb = document.querySelector('#input-b')
+            const display_rs = document.querySelector('#rs')
+
+
+            console.log(inpa, inpb);
+
+            const a = inpa<=inpb?parseInt(inpa.value):parseInt(inpb.value)
+            const b = inpa<=inpb?parseInt(inpb.value):parseInt(inpa.value)
+
+            if(b < 2){
+                display_rs.innerHTML = 0
+            }
+            
+
+            let rs = []
+            for(let i = a; i <= b; i++){
+                if(i<=1){continue}
+                if(i==2){rs.push(i)}
+                
+                let flag = false
+                for(let j = 2; j <= Math.sqrt(i); j++){
+                    if(i % j == 0){
+                        flag = false
+                        break
+                    } else {
+                        flag = true
+                        continue
+                    }
+                }
+                if(flag){rs.push(i)}
+            }
+            console.log(rs);
+
+            let sum = 0
+            rs.forEach( num => sum += num)
+
+            display_rs.innerHTML =  sum
+
+            // document.writeln(a+b)
+        })
+
+        
+    </script>
+</body>
+</html>
