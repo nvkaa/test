@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        body {
+            background-color: #282A36;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h3 { 
+            color: white;
+        }
+
+        .display {
+            color: white;
+            display: flex;
+
+        }
+
+        .time {
+            border : 2px solid #415574;
+            background-color: #324158;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Countdown</h3>
+        <div class="display">
+            <div class="time">
+                <h1 days></h1>
+                <p>Days</p>
+            </div>
+            <div class="time">
+                <h1 hours></h1>
+                <p>Hours</p>
+            </div>
+            <div class="time">
+                <h1 minutes></h1>
+                <p>Minutes</p>
+            </div>
+            <div class="time">
+                <h1 seconds></h1>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
